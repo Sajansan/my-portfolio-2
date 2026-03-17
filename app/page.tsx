@@ -2,8 +2,36 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sections = ["home", "about", "services", "work", "clients", "contact"];
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="relative bg-[#111] text-white font-sans selection:bg-white selection:text-black">
       {/* Hero Section */}
@@ -23,17 +51,31 @@ export default function Home() {
         </div>
 
         {/* Navigation */}
-        <nav className="relative z-10 w-full flex items-center justify-between px-6 py-8 md:px-16 lg:px-24">
-          <div className="text-xl md:text-2xl font-bold tracking-wider">Imozar</div>
+        <nav className="fixed top-0 left-0 right-0 z-50 w-full flex items-center justify-between px-6 py-8 md:px-16 lg:px-24 bg-transparent backdrop-blur-sm">
+          <div className="text-xl md:text-2xl font-bold tracking-wider">Sajan.</div>
           
           {/* Desktop Tabs */}
           <div className="hidden md:flex items-center gap-8 text-[11px] lg:text-[13px] font-semibold tracking-widest text-gray-300">
-            <Link href="#home" className="text-white border-b border-white pb-1">HOME</Link>
-            <Link href="#about" className="hover:text-white transition-colors">ABOUT</Link>
-            <Link href="#services" className="hover:text-white transition-colors">SERVICES</Link>
-            <Link href="#work" className="hover:text-white transition-colors">WORK</Link>
-            <Link href="#clients" className="hover:text-white transition-colors">CLIENTS</Link>
-            <Link href="#contact" className="hover:text-white transition-colors">CONTACT</Link>
+            {[
+              { id: "home", label: "HOME" },
+              { id: "about", label: "ABOUT" },
+              { id: "services", label: "SERVICES" },
+              { id: "work", label: "WORK" },
+              { id: "clients", label: "CLIENTS" },
+              { id: "contact", label: "CONTACT" },
+            ].map((tab) => (
+              <Link 
+                key={tab.id}
+                href={`#${tab.id}`} 
+                className={`${
+                  activeSection === tab.id 
+                    ? "text-white border-b border-white pb-1" 
+                    : "hover:text-white transition-colors"
+                }`}
+              >
+                {tab.label}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu Icon */}
@@ -52,8 +94,8 @@ export default function Home() {
           <div className="relative flex items-center justify-center w-[160px] h-[160px] md:w-[180px] md:h-[180px] rounded-full border border-white/60 mb-6 shadow-2xl">
             <div className="relative w-[140px] h-[140px] md:w-[160px] md:h-[160px] rounded-full overflow-hidden">
                {/* Note: Save the provided image as "profile.jpg" in the public directory */}
-               <img 
-                  src="/profile.jpg"
+                <img 
+                  src="/ChatGPT Image Mar 6, 2026, 01_41_16 PM.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
                   onError={(e) => {
