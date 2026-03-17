@@ -91,11 +91,11 @@ export default function Home() {
         {/* Hero Content */}
         <main className="relative z-10 flex-grow flex flex-col items-center justify-center -mt-16 px-4 text-center">
           {/* Profile Picture with outer broken border effect from image */}
-          <div className="relative flex items-center justify-center w-[160px] h-[160px] md:w-[180px] md:h-[180px] rounded-full border border-white/60 mb-6 shadow-2xl">
-            <div className="relative w-[140px] h-[140px] md:w-[160px] md:h-[160px] rounded-full overflow-hidden">
+          <div className="relative flex items-center justify-center w-[200px] h-[200px] md:w-[240px] md:h-[240px] rounded-full border border-white/60 mb-6 shadow-2xl">
+            <div className="relative w-[180px] h-[180px] md:w-[220px] md:h-[220px] rounded-full overflow-hidden">
                {/* Note: Save the provided image as "profile.jpg" in the public directory */}
                 <img 
-                  src="/ChatGPT Image Mar 6, 2026, 01_41_16 PM.png"
+                  src="/profile.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
                   onError={(e) => {
