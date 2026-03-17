@@ -106,11 +106,11 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-[56px] font-semibold mb-4 tracking-tight text-white drop-shadow-lg">
-            Hi, I'm Norman Doe
+            Hi, I'm Senthan Sajansan
           </h1>
           
           <p className="text-xs md:text-sm tracking-[0.25em] text-gray-200 mt-2 font-medium uppercase drop-shadow-md">
-            I'm UI/UX Designer
+            I'm a Software Engineer
           </p>
 
           {/* Scroll down indicator */}
