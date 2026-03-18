@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen bg-black flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
+    <section id="contact" className="min-h-screen bg-[rgba(1,7,28,1)] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
       <motion.div 
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
