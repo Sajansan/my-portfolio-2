@@ -1,7 +1,17 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function About() {
   return (
     <section id="about" className="min-h-screen bg-[#111] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
-      <div className="max-w-4xl w-full">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-4xl w-full"
+      >
         <h2 className="text-sm tracking-[0.4em] text-gray-500 mb-8 uppercase font-semibold">About Me</h2>
         
         <div className="space-y-8">
@@ -20,7 +30,7 @@ export default function About() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

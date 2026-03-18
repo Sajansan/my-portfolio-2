@@ -1,7 +1,17 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Contact() {
   return (
     <section id="contact" className="min-h-screen bg-black flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
-      <div className="max-w-4xl w-full text-center">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="max-w-4xl w-full text-center"
+      >
         <h2 className="text-sm tracking-[0.4em] text-gray-500 mb-8 uppercase font-semibold">Contact Me</h2>
         
         <p className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -30,7 +40,7 @@ export default function Contact() {
             <a href="your-link" className="text-white/60 hover:text-white transition-colors uppercase tracking-[0.2em] text-xs font-bold">GitHub</a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
