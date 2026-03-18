@@ -12,7 +12,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
         style={{
-          backgroundImage: "url('/Background.jpg')",
+          backgroundImage: "url('/nasa.jpg')",
         }}
       >
         {/* Gradient overlay to make text readable - slightly darker for better contrast */}
