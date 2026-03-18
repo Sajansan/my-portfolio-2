@@ -6,14 +6,13 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
-import Clients from "@/components/Clients";
 import Contact from "@/components/Contact";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const sections = ["home", "about", "services", "work", "clients", "contact"];
+    const sections = ["home", "about", "services", "work", "contact"];
     const observerOptions = {
       root: null,
       rootMargin: "-20% 0px -70% 0px",
@@ -44,7 +43,6 @@ export default function Home() {
       <About />
       <Services />
       <Work />
-      <Clients />
       <Contact />
     </div> 
   );
