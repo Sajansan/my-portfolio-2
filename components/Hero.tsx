@@ -28,26 +28,29 @@ export default function Hero() {
 
       {/* Hero Content */}
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center -mt-8 px-4 text-center">
-        {/* Profile Picture with glow effect and animation */}
+        {/* Profile Picture with soft glow & gradient ring */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative group mb-10"
         >
-          {/* Animated Glow Border */}
-          <div className="absolute inset-0 rounded-full bg-white/20 blur-xl group-hover:bg-white/30 transition-all duration-500 animate-pulse" />
+          {/* Enhanced Soft Glow */}
+          <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl group-hover:bg-blue-400/30 transition-all duration-700 animate-pulse" />
           
-          <div className="relative flex items-center justify-center w-[200px] h-[200px] md:w-[240px] md:h-[240px] rounded-full border-2 border-white/40 shadow-2xl overflow-hidden backdrop-blur-sm">
-            <div className="relative w-[185px] h-[185px] md:w-[225px] md:h-[225px] rounded-full overflow-hidden border-2 border-white/20">
-              <img 
-                src="/profile.png"
-                alt="Profile"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                onError={(e) => {
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop";
-                }}
-              />
+          {/* Gradient Ring Wrapper */}
+          <div className="relative p-1 rounded-full bg-gradient-to-tr from-blue-500 via-white/20 to-purple-500 shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+            <div className="relative flex items-center justify-center w-[200px] h-[200px] md:w-[240px] md:h-[240px] rounded-full bg-[rgba(1,4,16,1)] overflow-hidden backdrop-blur-sm">
+              <div className="relative w-[188px] h-[188px] md:w-[228px] md:h-[228px] rounded-full overflow-hidden border border-white/10">
+                <img 
+                  src="/profile.png"
+                  alt="Profile"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop";
+                  }}
+                />
+              </div>
             </div>
           </div>
         </motion.div>

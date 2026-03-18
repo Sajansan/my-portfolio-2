@@ -42,7 +42,12 @@ export default function Navbar({ activeSection }: NavbarProps) {
           : "bg-transparent"
       }`}
     >
-      <div className="text-xl md:text-2xl font-bold tracking-wider text-white">Sajan.</div>
+      <Link 
+        href="#home" 
+        className="text-xl md:text-2xl font-bold tracking-wider text-white hover:opacity-80 transition-opacity cursor-pointer"
+      >
+        Sajan.
+      </Link>
       
       {/* Desktop Tabs */}
       <div className="hidden md:flex items-center gap-8 text-[11px] lg:text-[13px] font-semibold tracking-widest text-gray-300">
