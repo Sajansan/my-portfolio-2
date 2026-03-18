@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen bg-[rgba(1,4,16,1)] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
+    <section id="contact" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-20 p-6 md:p-12 lg:p-24 pt-32">
       <motion.div 
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="max-w-4xl w-full text-center"
+        className="max-w-4xl w-full pt-8"
       >
-        <h2 className="text-sm tracking-[0.4em] text-gray-500 mb-8 uppercase font-semibold">Contact Me</h2>
+        <h2 className="text-sm tracking-[0.4em] text-blue-500 mb-8 uppercase font-bold text-left">Contact Me</h2>
         
-        <p className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-2xl leading-relaxed text-left">
           I am open to internship and freelance opportunities. Feel free to contact me.
         </p>
 
@@ -33,7 +33,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-start gap-6">
           <h4 className="text-[10px] tracking-widest uppercase text-gray-500 font-bold">Social Links</h4>
           <div className="flex gap-8">
             <a href="your-link" className="text-white/60 hover:text-white transition-colors uppercase tracking-[0.2em] text-xs font-bold">LinkedIn</a>

@@ -46,13 +46,13 @@ export default function Work() {
   };
 
   return (
-    <section id="work" className="min-h-screen bg-[rgba(1,4,16,1)] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
-      <div className="max-w-6xl w-full">
+    <section id="work" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-20 p-6 md:p-12 lg:p-24 pt-32">
+      <div className="max-w-6xl w-full pt-8">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm tracking-[0.4em] text-gray-500 mb-12 uppercase font-semibold text-center"
+          className="text-sm tracking-[0.4em] text-blue-500 mb-12 uppercase font-bold"
         >
           My Work
         </motion.h2>
