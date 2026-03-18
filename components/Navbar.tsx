@@ -39,7 +39,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 w-full flex items-center justify-between px-6 py-4 md:px-16 lg:px-24 transition-all duration-300 ${
         isScrolled 
-          ? "bg-white/5 backdrop-blur-lg border-b border-white/10 py-3 shadow-2xl" 
+          ? "bg-white/5 backdrop-blur-lg py-3 shadow-2xl" 
           : "bg-transparent"
       }`}
     >
