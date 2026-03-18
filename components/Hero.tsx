@@ -68,10 +68,10 @@ export default function Hero() {
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-           className="flex flex-col items-center space-y-4"
+           className="flex flex-col items-center space-y-4" 
         >
           <p className="text-sm md:text-base tracking-[0.3em] text-gray-300 font-medium uppercase drop-shadow-xl">
-            Software Engineer | Full Stack Developer
+            <span className="text-blue-400">Software Engineer</span> | <span className="text-blue-400">Full Stack Developer</span>
           </p>
           <p className="text-lg md:text-xl text-gray-400 font-light max-w-lg italic">
             I build modern web & mobile applications.
