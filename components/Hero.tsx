@@ -23,7 +23,7 @@ export default function Hero() {
         }}
       >
         {/* Gradient overlay to make text readable - darkened for professional look with new theme color */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[rgba(1,7,28,1)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-[rgba(1,4,16,1)]" />
       </div>
 
       {/* Hero Content */}

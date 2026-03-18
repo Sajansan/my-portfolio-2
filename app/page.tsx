@@ -37,7 +37,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative bg-[rgba(1,7,28,1)] text-white font-sans selection:bg-white selection:text-black">
+    <div className="relative bg-[rgba(1,4,16,1)] text-white font-sans selection:bg-white selection:text-black">
       <Navbar activeSection={activeSection} />
       <Hero />
       <About />

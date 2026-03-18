@@ -42,7 +42,7 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="min-h-screen bg-[rgba(1,7,28,1)] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
+    <section id="services" className="min-h-screen bg-[rgba(1,4,16,1)] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
       <div className="max-w-6xl w-full">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}

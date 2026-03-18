@@ -83,7 +83,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 bg-[rgba(1,7,28,1)] flex flex-col items-center justify-center transition-transform duration-500 ease-in-out md:hidden ${
+        className={`fixed inset-0 bg-[rgba(1,4,16,1)] flex flex-col items-center justify-center transition-transform duration-500 ease-in-out md:hidden ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
