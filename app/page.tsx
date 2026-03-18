@@ -148,6 +148,6 @@ export default function Home() {
         <h2 className="text-3xl tracking-widest text-[#555] mb-4">CONTACT</h2>
         <p className="text-zinc-400 max-w-2xl text-center">Your contact information goes here.</p>
       </section>
-    </div>
+    </div> 
   );
 } 
