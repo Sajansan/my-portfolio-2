@@ -1,8 +1,26 @@
 export default function About() {
   return (
-    <section id="about" className="min-h-screen bg-[#111] flex flex-col items-center justify-center p-8 text-center pt-24">
-      <h2 className="text-3xl tracking-widest text-[#555] mb-4">ABOUT</h2>
-      <p className="text-zinc-400 max-w-2xl text-center">Your about information goes here.</p>
+    <section id="about" className="min-h-screen bg-[#111] flex flex-col items-center justify-center p-6 md:p-12 lg:p-24 pt-32">
+      <div className="max-w-4xl w-full">
+        <h2 className="text-sm tracking-[0.4em] text-gray-500 mb-8 uppercase font-semibold">About Me</h2>
+        
+        <div className="space-y-8">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-tight text-white/90">
+            I am an undergraduate <span className="text-white">Software Engineering student</span> and a passionate software developer. I enjoy building modern web applications and learning new technologies.
+          </p>
+          
+          <div className="h-px w-20 bg-white/20" />
+          
+          <div className="grid md:grid-cols-2 gap-8 text-zinc-400">
+            <p className="text-base md:text-lg leading-relaxed">
+              I have basic knowledge in HTML, CSS, JavaScript, React, and C#. I am currently improving my skills to become a professional full stack developer.
+            </p>
+            <p className="text-base md:text-lg leading-relaxed">
+              My goal is to become a software engineering entrepreneur and build useful software products in the future.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
