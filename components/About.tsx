@@ -53,7 +53,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-blue-500" /> My Journey
+              <span className="h-px w-8 bg-blue-500" /> My Journey <span className="h-px w-8 bg-blue-500" />
             </h3>
             <div className="space-y-4 text-gray-400 leading-relaxed text-lg">
               <p>
@@ -73,7 +73,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-blue-500" /> Skills
+              <span className="h-px w-8 bg-blue-500" /> Skills <span className="h-px w-8 bg-blue-500" />
             </h3>
             <div className="flex flex-wrap gap-3">
               {[

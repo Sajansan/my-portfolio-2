@@ -131,7 +131,7 @@ export default function Services() {
           className="mb-24"
         >
           <h3 className="text-xl font-bold text-white mb-10 flex items-center gap-3">
-            <span className="h-px w-8 bg-blue-500" /> My Process
+            <span className="h-px w-8 bg-blue-500" /> My Process <span className="h-px w-8 bg-blue-500" />
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4 relative">
             {processSteps.map((step, index) => (

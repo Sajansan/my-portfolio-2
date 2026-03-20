@@ -31,7 +31,7 @@ export default function Work() {
           viewport={{ once: true }}
           className="text-sm tracking-[0.4em] text-blue-500 mb-12 uppercase font-bold"
         >
-          My Work
+          Selected Projects
         </motion.h2>
         
         <motion.div 
@@ -39,32 +39,44 @@ export default function Work() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {[
             {
               title: "Portfolio Website",
               description: "A personal portfolio website to showcase my skills and projects, featuring a sleek dark theme and smooth animations.",
               tech: ["Next.js", "React", "Tailwind CSS"],
-              image: "/portfolio_thumb.png"
+              image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop"
             },
             {
               title: "Calculator Application",
               description: "A simple calculator with basic operations, focused on clean UI and smooth user interaction.",
               tech: ["C#"],
-              image: "/calculator_thumb.png"
+              image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop"
             },
             {
               title: "Student Management System",
               description: "A system to manage student details and records, featuring a comprehensive dashboard and data visualization.",
               tech: ["Zoho Creator"],
-              image: "/sms_thumb.png"
+              image: "/ana.jpg"
             },
             {
               title: "Healthcare Web App",
               description: "Worked on a student wellness and mental health application with a focus on ease of use and accessibility.",
               tech: ["React", "Material UI"],
-              image: "/healthcare_thumb.png"
+              image: "/nasa.jpg"
+            },
+            {
+              title: "Travel Booking App",
+              description: "A luxury travel booking platform featuring exotic destinations and seamless reservation flow.",
+              tech: ["Next.js", "Prisma"],
+              image: "/pic.jpg"
+            },
+            {
+              title: "E-commerce Dashboard",
+              description: "A comprehensive admin dashboard for e-commerce, with real-time sales tracking and inventory management.",
+              tech: ["TypeScript", "Recharts"],
+              image: "/yes.jpg"
             }
           ].map((project, index) => (
             <motion.div 
