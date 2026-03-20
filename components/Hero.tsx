@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Github, Linkedin, Facebook } from "lucide-react";
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -9,6 +10,12 @@ export default function Hero() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const socials = [
+    { icon: <Linkedin size={20} />, href: "https://linkedin.com/in/your-profile", label: "LinkedIn" },
+    { icon: <Github size={20} />, href: "https://github.com/your-username", label: "GitHub" },
+    { icon: <Facebook size={20} />, href: "https://facebook.com/your-profile", label: "Facebook" },
+  ];
 
   return (
     <section 
@@ -97,6 +104,27 @@ export default function Hero() {
           >
             Contact Me
           </button>
+        </motion.div>
+
+        {/* Social Icons */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          className="flex gap-5 mt-10"
+        >
+          {socials.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="p-3.5 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 hover:scale-110 transition-all duration-300 backdrop-blur-md shadow-lg"
+            >
+              {social.icon}
+            </a>
+          ))}
         </motion.div>
 
         {/* Scroll down indicator */}

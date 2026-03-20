@@ -83,139 +83,147 @@ export default function ContactForm() {
   const errorInput = "border-red-500/60 focus:border-red-500/60 focus:ring-red-500/20";
 
   return (
-    <motion.form
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      onSubmit={handleSubmit}
-      noValidate
-      className="mt-16 space-y-6"
-      id="contact-form"
+      className="relative p-7 md:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl overflow-hidden group"
     >
-      <h3 className="text-lg font-semibold text-white mb-2">Send me a message</h3>
+      {/* Subtle background glow */}
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 blur-[100px] pointer-events-none group-hover:bg-blue-500/20 transition-colors duration-700" />
+      <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-purple-500/10 blur-[100px] pointer-events-none group-hover:bg-purple-500/20 transition-colors duration-700" />
 
-      {/* Honeypot — hidden from real users */}
-      <div className="absolute opacity-0 h-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        <label htmlFor="honeypot">Do not fill this</label>
-        <input
-          type="text"
-          id="honeypot"
-          name="honeypot"
-          tabIndex={-1}
-          autoComplete="off"
-          value={formData.honeypot}
-          onChange={handleChange}
-        />
-      </div>
-
-      {/* Name */}
-      <div>
-        <label htmlFor="contact-name" className="block text-[10px] tracking-widest uppercase text-gray-500 font-bold mb-2">
-          Name
-        </label>
-        <input
-          type="text"
-          id="contact-name"
-          name="name"
-          placeholder="Your name"
-          value={formData.name}
-          onChange={handleChange}
-          aria-invalid={!!fieldErrors.name}
-          className={`${inputBase} ${fieldErrors.name ? errorInput : ""}`}
-        />
-        {fieldErrors.name && (
-          <p className="mt-1.5 text-xs text-red-400">{fieldErrors.name}</p>
-        )}
-      </div>
-
-      {/* Email */}
-      <div>
-        <label htmlFor="contact-email" className="block text-[10px] tracking-widest uppercase text-gray-500 font-bold mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          id="contact-email"
-          name="email"
-          placeholder="your@email.com"
-          value={formData.email}
-          onChange={handleChange}
-          aria-invalid={!!fieldErrors.email}
-          className={`${inputBase} ${fieldErrors.email ? errorInput : ""}`}
-        />
-        {fieldErrors.email && (
-          <p className="mt-1.5 text-xs text-red-400">{fieldErrors.email}</p>
-        )}
-      </div>
-
-      {/* Message */}
-      <div>
-        <label htmlFor="contact-message" className="block text-[10px] tracking-widest uppercase text-gray-500 font-bold mb-2">
-          Message
-        </label>
-        <textarea
-          id="contact-message"
-          name="message"
-          rows={5}
-          placeholder="Write your message here..."
-          value={formData.message}
-          onChange={handleChange}
-          aria-invalid={!!fieldErrors.message}
-          className={`${inputBase} resize-none ${fieldErrors.message ? errorInput : ""}`}
-        />
-        {fieldErrors.message && (
-          <p className="mt-1.5 text-xs text-red-400">{fieldErrors.message}</p>
-        )}
-      </div>
-
-      {/* Submit button */}
-      <button
-        type="submit"
-        disabled={status === "sending"}
-        className="w-full sm:w-auto px-10 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-bold tracking-wide transition-all duration-300 hover:from-amber-400 hover:to-yellow-400 hover:shadow-lg hover:shadow-amber-500/20 active:scale-[0.97] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
+      <form
+        onSubmit={handleSubmit}
+        noValidate
+        className="relative z-10 space-y-6"
+        id="contact-form"
       >
-        {status === "sending" ? (
-          <span className="flex items-center justify-center gap-2">
-            <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-            </svg>
-            Sending...
-          </span>
-        ) : (
-          "Send Message"
-        )}
-      </button>
+        <h3 className="text-xl font-bold text-white mb-2">Send me a message</h3>
 
-      {/* Status messages */}
-      <div aria-live="polite" className="min-h-[2.5rem]">
-        {status === "success" && (
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-5 py-3"
-          >
-            <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {serverMessage}
-          </motion.p>
-        )}
+        {/* Honeypot — hidden from real users */}
+        <div className="absolute opacity-0 h-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <label htmlFor="honeypot">Do not fill this</label>
+          <input
+            type="text"
+            id="honeypot"
+            name="honeypot"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.honeypot}
+            onChange={handleChange}
+          />
+        </div>
 
-        {status === "error" && (
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-5 py-3"
-          >
-            <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {serverMessage}
-          </motion.p>
-        )}
-      </div>
-    </motion.form>
+        {/* Name */}
+        <div>
+          <label htmlFor="contact-name" className="block text-[10px] tracking-widest uppercase text-gray-500 font-bold mb-2 ml-1">
+            Name
+          </label>
+          <input
+            type="text"
+            id="contact-name"
+            name="name"
+            placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
+            aria-invalid={!!fieldErrors.name}
+            className={`${inputBase} ${fieldErrors.name ? errorInput : ""}`}
+          />
+          {fieldErrors.name && (
+            <p className="mt-1.5 text-xs text-red-400 ml-1">{fieldErrors.name}</p>
+          )}
+        </div>
+
+        {/* Email */}
+        <div>
+          <label htmlFor="contact-email" className="block text-[10px] tracking-widest uppercase text-gray-500 font-bold mb-2 ml-1">
+            Email
+          </label>
+          <input
+            type="email"
+            id="contact-email"
+            name="email"
+            placeholder="your@email.com"
+            value={formData.email}
+            onChange={handleChange}
+            aria-invalid={!!fieldErrors.email}
+            className={`${inputBase} ${fieldErrors.email ? errorInput : ""}`}
+          />
+          {fieldErrors.email && (
+            <p className="mt-1.5 text-xs text-red-400 ml-1">{fieldErrors.email}</p>
+          )}
+        </div>
+
+        {/* Message */}
+        <div>
+          <label htmlFor="contact-message" className="block text-[10px] tracking-widest uppercase text-gray-500 font-bold mb-2 ml-1">
+            Message
+          </label>
+          <textarea
+            id="contact-message"
+            name="message"
+            rows={4}
+            placeholder="Write your message here..."
+            value={formData.message}
+            onChange={handleChange}
+            aria-invalid={!!fieldErrors.message}
+            className={`${inputBase} resize-none ${fieldErrors.message ? errorInput : ""}`}
+          />
+          {fieldErrors.message && (
+            <p className="mt-1.5 text-xs text-red-400 ml-1">{fieldErrors.message}</p>
+          )}
+        </div>
+
+        {/* Submit button */}
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="w-full px-10 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-bold tracking-wide transition-all duration-300 hover:from-amber-400 hover:to-yellow-400 hover:shadow-xl hover:shadow-amber-500/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
+        >
+          {status === "sending" ? (
+            <span className="flex items-center justify-center gap-2">
+              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+              </svg>
+              Sending...
+            </span>
+          ) : (
+            "Send Message"
+          )}
+        </button>
+
+        {/* Status messages */}
+        <div aria-live="polite" className="min-h-[2.5rem]">
+          {status === "success" && (
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-2 text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-5 py-3"
+            >
+              <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {serverMessage}
+            </motion.p>
+          )}
+
+          {status === "error" && (
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-2 text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-5 py-3"
+            >
+              <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {serverMessage}
+            </motion.p>
+          )}
+        </div>
+      </form>
+    </motion.div>
   );
 }
