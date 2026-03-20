@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ContactForm from "@/components/contact/ContactForm";
 
 export default function Contact() {
   return (
@@ -40,6 +41,9 @@ export default function Contact() {
             <a href="your-link" className="text-white/60 hover:text-white transition-colors uppercase tracking-[0.2em] text-xs font-bold">GitHub</a>
           </div>
         </div>
+
+        {/* Contact Form */}
+        <ContactForm />
       </motion.div>
     </section>
   );
