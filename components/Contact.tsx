@@ -48,7 +48,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-20 p-6 md:p-12 lg:p-24 pt-32">
+    <section id="contact" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-16 p-6 md:p-12 lg:p-24">
       <motion.div 
         initial="hidden"
         whileInView="visible"
@@ -61,24 +61,6 @@ export default function Contact() {
         <motion.p variants={itemVariants} className="text-2xl md:text-3xl font-semibold text-white mb-12 max-w-2xl leading-tight text-left">
           Let’s work together on your next project.
         </motion.p>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {contactInfo.map((info, index) => (
-            <motion.a 
-              key={index}
-              href={info.href}
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="group p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/[0.08] hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10"
-            >
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                {info.icon}
-              </div>
-              <h4 className="text-[10px] tracking-widest uppercase text-gray-500 mb-2 font-bold">{info.label}</h4>
-              <p className="text-white font-medium group-hover:text-blue-400 transition-colors duration-300">{info.value}</p>
-            </motion.a>
-          ))}
-        </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start h-auto">
           {/* Social and Info side */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Facebook } from "lucide-react";
+import { Github, Linkedin, Facebook, Mail, Phone } from "lucide-react";
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -83,6 +83,16 @@ export default function Hero() {
           <p className="text-lg md:text-xl text-gray-400 font-light max-w-lg italic">
             I build modern web & mobile applications.
           </p>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 text-gray-400 text-sm md:text-base">
+            <a href="mailto:sajansan47@gmail.com" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+              <Mail size={18} className="text-blue-400" />
+              <span>sajansan47@gmail.com</span>
+            </a>
+            <a href="tel:+94XXXXXXXXX" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
+              <Phone size={18} className="text-blue-400" />
+              <span>+94 XXXXXXXX</span>
+            </a>
+          </div>
         </motion.div>
 
         {/* CTA Buttons - Important for Portfolio */}

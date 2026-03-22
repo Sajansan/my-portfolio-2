@@ -23,7 +23,7 @@ export default function Work() {
   };
 
   return (
-    <section id="work" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-20 px-6 md:px-12 lg:px-24">
+    <section id="work" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-6xl w-full pt-8">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
