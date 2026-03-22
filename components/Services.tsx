@@ -78,7 +78,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-16 px-6 md:px-12 lg:px-24"
+      className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-16 px-4 sm:px-8 md:px-12 lg:px-24"
     >
       <div className="max-w-6xl w-full pt-8">
         {/* Header */}

@@ -47,8 +47,8 @@ export default function Hero() {
           
           {/* Gradient Ring Wrapper */}
           <div className="relative p-1 rounded-full bg-gradient-to-tr from-blue-500 via-white/20 to-purple-500 shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-            <div className="relative flex items-center justify-center w-[200px] h-[200px] md:w-[240px] md:h-[240px] rounded-full bg-[rgba(1,4,16,1)] overflow-hidden backdrop-blur-sm">
-              <div className="relative w-[188px] h-[188px] md:w-[228px] md:h-[228px] rounded-full overflow-hidden border border-white/10">
+            <div className="relative flex items-center justify-center w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[240px] md:h-[240px] rounded-full bg-[rgba(1,4,16,1)] overflow-hidden backdrop-blur-sm">
+              <div className="relative w-[148px] h-[148px] sm:w-[188px] sm:h-[188px] md:w-[228px] md:h-[228px] rounded-full overflow-hidden border border-white/10">
                 <img 
                   src="/profile.png"
                   alt="Profile"
@@ -66,7 +66,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-6xl lg:text-[72px] font-bold mb-6 tracking-tight text-white drop-shadow-2xl"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-white drop-shadow-2xl px-2"
         >
           Hi, I&apos;m <span className="text-white/90">Sajansan</span>
         </motion.h1>
@@ -77,19 +77,19 @@ export default function Hero() {
            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
            className="flex flex-col items-center space-y-4" 
         >
-          <p className="text-sm md:text-base tracking-[0.3em] text-gray-300 font-medium uppercase drop-shadow-xl">
+          <p className="text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 font-medium uppercase drop-shadow-xl px-4">
             <span className="text-blue-400">Software Engineer</span> | <span className="text-blue-400">Full Stack Developer</span>
           </p>
-          <p className="text-lg md:text-xl text-gray-400 font-light max-w-lg italic">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 font-light max-w-lg italic px-6">
             I build modern web & mobile applications.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8 mt-4 text-gray-400 text-sm md:text-base">
+          <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 mt-4 text-gray-400 text-xs sm:text-sm md:text-base">
             <a href="mailto:sajansan47@gmail.com" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
-              <Mail size={18} className="text-blue-400" />
+              <Mail size={16} className="text-blue-400 md:w-[18px] md:h-[18px]" />
               <span>sajansan47@gmail.com</span>
             </a>
             <a href="tel:+94XXXXXXXXX" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
-              <Phone size={18} className="text-blue-400" />
+              <Phone size={16} className="text-blue-400 md:w-[18px] md:h-[18px]" />
               <span>+94 XXXXXXXX</span>
             </a>
           </div>
@@ -104,13 +104,13 @@ export default function Hero() {
         >
           <button 
             onClick={() => scrollToSection("work")}
-            className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-white/10 active:scale-95"
+            className="px-8 py-3.5 sm:py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-white/10 active:scale-95 text-sm sm:text-base"
           >
             View My Work
           </button>
           <button 
             onClick={() => scrollToSection("contact")}
-            className="px-8 py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm active:scale-95"
+            className="px-8 py-3.5 sm:py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm active:scale-95 text-sm sm:text-base"
           >
             Contact Me
           </button>

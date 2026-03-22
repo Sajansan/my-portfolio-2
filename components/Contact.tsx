@@ -48,7 +48,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-16 p-6 md:p-12 lg:p-24">
+    <section id="contact" className="bg-[rgba(1,4,16,1)] flex flex-col items-center py-16 px-4 sm:px-8 md:px-12 lg:px-24">
       <motion.div 
         initial="hidden"
         whileInView="visible"

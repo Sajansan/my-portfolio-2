@@ -180,7 +180,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="w-full px-10 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 text-black font-bold tracking-wide transition-all duration-300 hover:from-amber-400 hover:to-yellow-400 hover:shadow-xl hover:shadow-amber-500/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
+          className="w-full px-10 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold tracking-wide transition-all duration-300 hover:from-blue-500 hover:to-cyan-400 hover:shadow-xl hover:shadow-blue-500/30 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
         >
           {status === "sending" ? (
             <span className="flex items-center justify-center gap-2">
