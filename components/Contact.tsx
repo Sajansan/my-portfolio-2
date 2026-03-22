@@ -54,7 +54,7 @@ export default function Contact() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={containerVariants}
-        className="max-w-4xl w-full pt-8"
+      className="max-w-6xl w-full pt-8"
       >
         <motion.h2 variants={itemVariants} className="text-sm tracking-[0.4em] text-blue-500 mb-8 uppercase font-bold text-left">Contact Me</motion.h2>
         
