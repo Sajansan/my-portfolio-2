@@ -34,7 +34,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <main className="relative z-10 flex-grow flex flex-col items-center justify-center -mt-8 px-4 text-center">
+      <main className="relative z-10 flex-grow flex flex-col items-center justify-center pt-24 sm:pt-32 pb-12 px-4 text-center">
         {/* Profile Picture with soft glow & gradient ring */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
