@@ -43,7 +43,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
       }`}
     >
       <Link 
-        href="#home" 
+        href="/" 
         className="text-lg sm:text-xl md:text-2xl font-bold tracking-wider text-white hover:opacity-80 transition-opacity cursor-pointer"
       >
         Sajan.
@@ -54,7 +54,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
         {navItems.map((tab) => (
           <Link 
             key={tab.id}
-            href={`#${tab.id}`} 
+            href={`/#${tab.id}`} 
             className={`transition-all duration-300 ${
               activeSection === tab.id 
                 ? "text-white border-b border-white pb-1" 
@@ -96,7 +96,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
           {navItems.map((tab) => (
             <Link 
               key={tab.id}
-              href={`#${tab.id}`} 
+              href={`/#${tab.id}`} 
               onClick={() => setIsMenuOpen(false)}
               className={`transition-colors duration-300 ${
                 activeSection === tab.id ? "text-white" : "hover:text-white"
