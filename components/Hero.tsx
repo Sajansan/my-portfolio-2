@@ -90,7 +90,7 @@ export default function Hero() {
             </a>
             <a href="tel:+94XXXXXXXXX" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
               <Phone size={16} className="text-blue-400 md:w-[18px] md:h-[18px]" />
-              <span>+94 XXXXXXXX</span>
+              <span>+94 741231835</span>
             </a>
           </div>
         </motion.div>
