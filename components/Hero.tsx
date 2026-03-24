@@ -78,7 +78,7 @@ export default function Hero() {
            className="flex flex-col items-center space-y-4" 
         >
           <p className="text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 font-medium uppercase drop-shadow-xl px-4">
-            <span className="text-blue-400">Software Engineer</span> | <span className="text-blue-400">Full Stack Developer</span>
+            <span className="text-blue-400">Software Engineer</span> | <span className="text-blue-400">Full Stack Dev</span>
           </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-400 font-light max-w-lg italic px-6">
             I build modern web & mobile applications.
