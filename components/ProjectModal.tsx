@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import { Project } from "./types";
 import { X, ChevronRight } from "lucide-react";
 
@@ -11,6 +12,17 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ isOpen, onClose, project }: ProjectModalProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   if (!project) return null;
 
   return (
@@ -23,7 +35,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm"
           />
 
           {/* Modal Card */}
@@ -34,6 +46,13 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl bg-[#010410] border border-white/10 shadow-2xl flex flex-col md:flex-row"
           >
+            {/* Close Button - Moved to card level for mobile visibility */}
+            <button
+              onClick={onClose}
+              className="absolute top-6 right-6 z-[110] p-2 rounded-full bg-black/20 md:bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white/50 hover:text-white backdrop-blur-sm"
+            >
+              <X size={20} />
+            </button>
             {/* Liquid Background Decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
               <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[100px] animate-liquid" />
@@ -52,12 +71,6 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
 
             {/* Right: Content Section */}
             <div className="relative w-full md:w-1/2 p-8 md:p-10 flex flex-col overflow-y-auto custom-scrollbar">
-              <button
-                onClick={onClose}
-                className="absolute top-6 right-6 p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-white/50 hover:text-white"
-              >
-                <X size={20} />
-              </button>
 
               <div className="mb-8">
                 <motion.span 
