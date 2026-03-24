@@ -27,7 +27,7 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: <Linkedin size={20} />, href: "https://linkedin.com/in/your-profile", label: "LinkedIn" },
+    { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/senthan-sajansan-a2b406318/", label: "LinkedIn" },
     { icon: <Github size={20} />, href: "https://github.com/your-username", label: "GitHub" },
     { icon: <Facebook size={20} />, href: "https://facebook.com/your-profile", label: "Facebook" },
   ];
