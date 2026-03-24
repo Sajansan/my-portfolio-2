@@ -12,18 +12,30 @@ export default function Hero() {
   };
 
   const socials = [
-    { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/senthan-sajansan-a2b406318/", label: "LinkedIn" },
-    { icon: <Github size={20} />, href: "https://github.com/your-username", label: "GitHub" },
-    { icon: <Facebook size={20} />, href: "https://facebook.com/your-profile", label: "Facebook" },
+    {
+      icon: <Linkedin size={20} />,
+      href: "https://www.linkedin.com/in/senthan-sajansan-a2b406318/",
+      label: "LinkedIn",
+    },
+    {
+      icon: <Github size={20} />,
+      href: "https://github.com/Sajansan?tab=repositories",
+      label: "GitHub",
+    },
+    {
+      icon: <Facebook size={20} />,
+      href: "https://facebook.com/your-profile",
+      label: "Facebook",
+    },
   ];
 
   return (
-    <section 
+    <section
       id="home"
       className="relative min-h-screen flex flex-col overflow-hidden"
     >
       {/* Background Image Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
         style={{
           backgroundImage: "url('/yes.jpg')",
@@ -36,7 +48,7 @@ export default function Hero() {
       {/* Hero Content */}
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center pt-24 sm:pt-32 pb-12 px-4 text-center">
         {/* Profile Picture with soft glow & gradient ring */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -44,17 +56,18 @@ export default function Hero() {
         >
           {/* Enhanced Soft Glow */}
           <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl group-hover:bg-blue-400/30 transition-all duration-700 animate-pulse" />
-          
+
           {/* Gradient Ring Wrapper */}
           <div className="relative p-1 rounded-full bg-gradient-to-tr from-blue-500 via-white/20 to-purple-500 shadow-[0_0_20px_rgba(59,130,246,0.5)]">
             <div className="relative flex items-center justify-center w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[240px] md:h-[240px] rounded-full bg-[rgba(1,4,16,1)] overflow-hidden backdrop-blur-sm">
               <div className="relative w-[148px] h-[148px] sm:w-[188px] sm:h-[188px] md:w-[228px] md:h-[228px] rounded-full overflow-hidden border border-white/10">
-                <img 
+                <img
                   src="/profile.png"
                   alt="Profile"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop";
+                    e.currentTarget.src =
+                      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1287&auto=format&fit=crop";
                   }}
                 />
               </div>
@@ -62,7 +75,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -70,45 +83,58 @@ export default function Hero() {
         >
           Hi, I&apos;m <span className="text-white/90">Sajansan</span>
         </motion.h1>
-        
+
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-           className="flex flex-col items-center space-y-4" 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="flex flex-col items-center space-y-4"
         >
           <p className="text-xs sm:text-sm md:text-base tracking-[0.2em] sm:tracking-[0.3em] text-gray-300 font-medium uppercase drop-shadow-xl px-4">
-            <span className="text-blue-400">Software Engineer</span> | <span className="text-blue-400">Full Stack Developer</span>
+            <span className="text-blue-400">Software Engineer</span> |{" "}
+            <span className="text-blue-400">Full Stack Developer</span>
           </p>
           <p className="text-base sm:text-lg md:text-xl text-gray-400 font-light max-w-lg italic px-6">
             I build modern web & mobile applications.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-3 md:gap-8 mt-4 text-gray-400 text-xs sm:text-sm md:text-base">
-            <a href="mailto:sajansan47@gmail.com" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
-              <Mail size={16} className="text-blue-400 md:w-[18px] md:h-[18px]" />
+            <a
+              href="mailto:sajansan47@gmail.com"
+              className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+            >
+              <Mail
+                size={16}
+                className="text-blue-400 md:w-[18px] md:h-[18px]"
+              />
               <span>sajansan47@gmail.com</span>
             </a>
-            <a href="tel:+94XXXXXXXXX" className="flex items-center gap-2 hover:text-blue-400 transition-colors">
-              <Phone size={16} className="text-blue-400 md:w-[18px] md:h-[18px]" />
+            <a
+              href="tel:+94XXXXXXXXX"
+              className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+            >
+              <Phone
+                size={16}
+                className="text-blue-400 md:w-[18px] md:h-[18px]"
+              />
               <span>+94 741231835</span>
             </a>
           </div>
         </motion.div>
 
         {/* CTA Buttons - Important for Portfolio */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 mt-12"
         >
-          <button 
+          <button
             onClick={() => scrollToSection("work")}
             className="px-8 py-3.5 sm:py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-white/10 active:scale-95 text-sm sm:text-base"
           >
             View My Work
           </button>
-          <button 
+          <button
             onClick={() => scrollToSection("contact")}
             className="px-8 py-3.5 sm:py-4 bg-transparent border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm active:scale-95 text-sm sm:text-base"
           >
@@ -117,7 +143,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Social Icons */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -138,16 +164,26 @@ export default function Hero() {
         </motion.div>
 
         {/* Scroll down indicator */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
           transition={{ duration: 1, delay: 1.2 }}
           className="absolute bottom-10 animate-bounce flex flex-col items-center cursor-pointer"
           onClick={() => scrollToSection("about")}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14"/>
-            <path d="m19 12-7 7-7-7"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M12 5v14" />
+            <path d="m19 12-7 7-7-7" />
           </svg>
         </motion.div>
       </main>
